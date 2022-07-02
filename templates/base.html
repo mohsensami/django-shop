@@ -1,3 +1,5 @@
+{% load static %}
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,11 +10,11 @@
   <title>Django - Shop</title>
 
   <!-- Bootstrap css -->
-  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/bootstrap.css?v=2.0" rel="stylesheet" type="text/css" />
+  <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
 
   <!-- Custom css -->
-  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/ui.css?v=2.0" rel="stylesheet" type="text/css" />
-  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/responsive.css?v=2.0" rel="stylesheet" type="text/css" />
+  <link href="{% static '/css/ui.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static '/css/responsive.css' %}" rel="stylesheet" type="text/css" />
 
   <!-- Font awesome 5 -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -37,10 +39,10 @@
 
 
 <!-- Bootstrap js -->
-<script src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/js/bootstrap.bundle.min.js"></script>
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
 
 <!-- Custom js -->
-<script src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/js/script.js?v=2.0"></script>
+<script src="{% static '/js/script.js' %}"></script>
 
 </body>
 </html>
