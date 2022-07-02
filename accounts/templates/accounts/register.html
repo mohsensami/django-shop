@@ -4,7 +4,7 @@
     <div class="col-md-8 mx-auto card mb-4"> 
         <article class="card-body">
             <h4 class="mb-4">Register</h4>
-            <form method="POST">
+            <form method="POST" novalidate>
                 {% csrf_token %}
               {{ form.as_p }}
               <input class="btn btn-primary btn-sm" type="submit" value="Register">
