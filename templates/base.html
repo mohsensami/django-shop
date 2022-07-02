@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Type some info">
+  <meta name="author" content="Type name">
+
+  <title>Django - Shop</title>
+
+  <!-- Bootstrap css -->
+  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/bootstrap.css?v=2.0" rel="stylesheet" type="text/css" />
+
+  <!-- Custom css -->
+  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/ui.css?v=2.0" rel="stylesheet" type="text/css" />
+  <link href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/css/responsive.css?v=2.0" rel="stylesheet" type="text/css" />
+
+  <!-- Font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+</head>
+<body class="bg-light">
+
+
+  {% include 'inc/header.html' %}
+
+
+<div class="container my-5">
+  {% include 'inc/messages.html' %}
+  {% block content %}
+  
+  {% endblock %}
+</div>
+
+
+{% include 'inc/footer.html' %}
+
+
+
+<!-- Bootstrap js -->
+<script src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom js -->
+<script src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/js/script.js?v=2.0"></script>
+
+</body>
+</html>
