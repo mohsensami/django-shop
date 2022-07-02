@@ -39,7 +39,8 @@ class UserRegistrationForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     full_name = forms.CharField(label='full name', widget=forms.TextInput(attrs={'class': 'form-control'}))
     phone = forms.CharField(max_length=11, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     
     def clean_email(self):
             email = self.cleaned_data['email']
@@ -54,7 +55,21 @@ class UserRegistrationForm(forms.Form):
         if user:
             raise ValidationError('This phone number already exists')
         return phone
+    
+    def clean(self):
+        cd = super().clean()
+        p1 = cd.get('password1')
+        p2 = cd.get('password2')
+
+        if p1 and p2 and p1 != p2:
+            raise ValidationError('password missmatch!')
 
 
 class VerifyCodeForm(forms.Form):
     code = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+
+
+class UserLoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
