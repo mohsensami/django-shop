@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     /// for demo purpose download link
     var body_el = document.querySelector("body");
     var get_link = document.createElement("div");
-    get_link.innerHTML = '<a href="https://bootstrap-ecommerce.com/index.html#download" class="btn btn-dark rounded-pill" style="font-size:13px; z-index:100; position: fixed; bottom:10px; right:10px;">Download</a>'
+    get_link.innerHTML = ''
     body_el.appendChild(get_link);
     // end for demo 
 

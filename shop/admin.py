@@ -27,7 +27,7 @@ make_draft.short_description = "Draft Selected Articles"
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('category', 'name', 'available', 'publish')
+    list_display = ('name', 'category', 'available', 'publish')
     list_filter = ('publish', 'available')
     search_fields = ('name', )
     prepopulated_fields = {'slug': ('name',)}
