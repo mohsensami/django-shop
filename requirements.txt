@@ -1,0 +1,11 @@
+asgiref==3.5.2
+certifi==2022.6.15
+charset-normalizer==2.1.0
+Django==4.0.5
+idna==3.3
+kavenegar==1.1.2
+Pillow==9.2.0
+requests==2.28.1
+sqlparse==0.4.2
+tzdata==2022.1
+urllib3==1.26.9
