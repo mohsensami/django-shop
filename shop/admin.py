@@ -26,16 +26,23 @@ def make_draft(modeladmin, request, queryset):
 make_draft.short_description = "Draft Selected Articles"
 
 
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'available', 'publish')
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'available', 'publish')
     list_filter = ('publish', 'available')
     search_fields = ('name', )
     prepopulated_fields = {'slug': ('name',)}
     ordering = ['available', '-publish']
     actions = [make_published, make_draft]
 
+admin.site.register(Product, ProductAdmin)
 
-admin.site.register(Product, PostAdmin)
 
-admin.site.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    list_filter = ('name', )
+    search_fields = ('name', )
+    prepopulated_fields = {'slug': ('name',)}
+    ordering = ['name']
+
+admin.site.register(Category, CategoryAdmin)
 

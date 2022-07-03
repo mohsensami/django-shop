@@ -9,15 +9,11 @@
 		<div class="row">
 			<aside class="col-lg-3"> 
 				<nav class="nav flex-column nav-pills">
-				  <a class="nav-link active" aria-current="page" href="#">Electronics</a>
-				  <a class="nav-link" href="#">Clothes and wear</a>
-				  <a class="nav-link" href="#">Home interiors</a>
-				  <a class="nav-link" href="#">Computer and tech</a>
-				  <a class="nav-link" href="#">Tools, equipments</a>
-				  <a class="nav-link" href="#">Sports and outdoor</a>
-				  <a class="nav-link" href="#">Animal and pets</a>
-				  <a class="nav-link" href="#">Machinery tools</a>
-				  <a class="nav-link" href="#">Other products</a>
+					{% for cat in categories %}
+						<a class="nav-link" href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+					{% endfor %}
+
+
 				</nav>
 			</aside>
 			<div class="col-lg-9">
