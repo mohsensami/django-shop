@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .models import Product, Category
+from orders.forms import CartAddForm
 
 
 class HomeView(View):
@@ -12,8 +13,9 @@ class HomeView(View):
 
 class DetailView(View):
     def get(self, request, slug):
+        form = CartAddForm()
         product = Product.objects.get(slug=slug)
-        return render(request, 'shop/detail.html', {'product': product})
+        return render(request, 'shop/detail.html', {'product': product, 'form': form})
 
 
 class CategoryView(View):

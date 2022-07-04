@@ -80,26 +80,20 @@
               <option>Large</option>
             </select>
           </div> <!-- col.// -->
-          <div class="col-md-4 col-6 mb-3">
-            <label class="form-label d-block">Quantity</label>
-            <div class="input-group input-spinner">
-              <button class="btn btn-icon btn-light" type="button"> 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
-                    <path d="M19 13H5v-2h14v2z"></path>
-                  </svg>
-              </button>
-              <input class="form-control text-center" placeholder="" value="14">
-              <button class="btn btn-icon btn-light" type="button"> 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
-                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-                  </svg>
-              </button>
-            </div> <!-- input-group.// -->
-          </div> <!-- col.// -->
+          
         </div> <!-- row.// -->
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <form action="{% url 'orders:cart_add' product.id %}" method="POST">
+              {% csrf_token %}
+              {{ form }}
+              <input class="btn btn-sm btn-primary" type="submit" Value="Add to cart">
+            </form>
+          </div> <!-- col.// -->
+        </div>
     
-        <a href="#" class="btn  btn-warning"> Buy now </a>
-        <a href="#" class="btn  btn-primary"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+
         <a href="#" class="btn  btn-light"> <i class="me-1 fa fa-heart"></i> Save </a>
       
       </article> <!-- product-info-aside .// -->
