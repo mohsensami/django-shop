@@ -10,101 +10,36 @@
             <div class="card">
             <div class="content-body">
                 <h4 class="card-title mb-4">Your shopping cart</h4>
-                <article class="row gy-3 mb-4">
-                    <div class="col-lg-5">
-                        <figure class="itemside me-lg-5">
-                            <div class="aside"><img src="images/items/11.jpg" class="img-sm img-thumbnail"></div>
-                            <figcaption class="info">
-                                <a href="#" class="title">Winter jacket for men and lady</a>
-                                <p class="text-muted"> Yellow, Jeans </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-auto">
-                        <select style="width: 100px" class="form-select">
-                            <option>1</option>
-                            <option>2</option>	
-                            <option>3</option>	
-                            <option>4</option>	
-                        </select> 
-                    </div>
-                    <div class="col-lg-2 col-sm-4 col-6">
-                        <div class="price-wrap lh-sm"> 
-                            <var class="price h6">$1156.00</var>  <br>
-                            <small class="text-muted"> $460.00 / per item </small> 
-                        </div> <!-- price-wrap .// -->
-                    </div>
-                    <div class="col-lg col-sm-4">
-                        <div class="float-lg-end">
-                            <a href="#" class="btn btn-light"> <i class="fa fa-heart"></i></a> 
-                            <a href="#" class="btn btn-light text-danger"> Remove</a>
-                        </div>
-                    </div>
-                </article> <!-- row.// -->
-    
-                <article class="row gy-3 mb-4">
-                    <div class="col-lg-5">
-                        <figure class="itemside me-lg-5">
-                            <div class="aside"><img src="images/items/12.jpg" class="img-sm img-thumbnail"></div>
-                            <figcaption class="info">
-                                <a href="#" class="title">Mens T-shirt Cotton Base</a>
-                                <p class="text-muted"> Blue, Medium </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-auto">
-                        <select style="width: 100px" class="form-select">
-                            <option>1</option>
-                            <option>2</option>	
-                            <option>3</option>	
-                            <option selected="">4</option>	
-                        </select> 
-                    </div>
-                    <div class="col-lg-2 col-sm-4 col-6">
-                        <div class="price-wrap lh-sm"> 
-                            <var class="price h6">$44.80</var>  <br>
-                            <small class="text-muted"> $12.20 / per item </small> 
-                        </div> <!-- price-wrap .// -->
-                    </div>
-                    <div class="col-lg col-sm-4">
-                        <div class="float-lg-end">
-                            <a href="#" class="btn btn-light"> <i class="fa fa-heart"></i></a> 
-                            <a href="#" class="btn btn-light text-danger"> Remove</a>
-                        </div>
-                    </div>
-                </article> <!-- row.// -->
-    
-                <article class="row gy-3 mb-4">
-                    <div class="col-lg-5">
-                        <figure class="itemside me-lg-5">
-                            <div class="aside"><img src="images/items/13.jpg" class="img-sm img-thumbnail"></div>
-                            <figcaption class="info">
-                                <a href="#" class="title">Blazer Suit Dress Jacket for Men</a>
-                                <p class="text-muted"> XL size, Jeans, Blue </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-auto">
-                        <select style="width: 100px" class="form-select">
-                            <option>1</option>
-                            <option>2</option>	
-                            <option selected="">3</option>	
-                            <option>4</option>	
-                        </select> 
-                    </div>
-                    <div class="col-lg-2 col-sm-4 col-6">
-                        <div class="price-wrap lh-sm"> 
-                            <var class="price h6">$1156.00</var>  <br>
-                            <small class="text-muted"> $460.00 / per item </small> 
-                        </div> <!-- price-wrap .// -->
-                    </div>
-                    <div class="col-lg col-sm-4">
-                        <div class="float-lg-end">
-                            <a href="#" class="btn btn-light"> <i class="fa fa-heart"></i></a> 
-                            <a href="#" class="btn btn-light text-danger"> Remove</a>
-                        </div>
-                    </div>
-                </article> <!-- row.// -->
+                
+
+
+
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Total Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in cart %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ item.product }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.total_price }}</td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+
     
             </div> <!-- card-body .// -->
     
